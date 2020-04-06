@@ -13,7 +13,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 @SuppressWarnings("deprecation")
 @Entity
 public class Oportunidade {
-	
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
