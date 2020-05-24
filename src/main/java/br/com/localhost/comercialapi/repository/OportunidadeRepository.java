@@ -9,5 +9,4 @@ import br.com.localhost.comercialapi.model.Oportunidade;
 public interface OportunidadeRepository extends JpaRepository<Oportunidade, Long>{
 	
 	Optional<Oportunidade> findByDescricaoAndNomeProspecto(String descricao, String nomeProspecto);
-
 }

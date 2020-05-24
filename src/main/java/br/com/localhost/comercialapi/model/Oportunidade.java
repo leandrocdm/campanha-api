@@ -7,10 +7,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
-@SuppressWarnings("deprecation")
 @Entity
 public class Oportunidade {
 
@@ -19,15 +20,27 @@ public class Oportunidade {
 	private Long id;
 	
 	@NotEmpty
+	@Size(max=200)
 	@Column(name="nome_prospecto")
 	private String nomeProspecto;
 	
 	@NotEmpty
+	@Size(max=200)
 	@Column
 	private String descricao;
 	
 	@Column
+	@Min(0)
 	private BigDecimal valor;
+
+	public Oportunidade(){super();}
+
+	public Oportunidade(Long id, String nomeProspecto, String descricao, BigDecimal valor){
+		this.id = id;
+		this.nomeProspecto = nomeProspecto;
+		this.descricao = descricao;
+		this.valor = valor;
+	}
 	
 	public Long getId() {
 		return id;
